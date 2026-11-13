@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manual Técnico da Cafeicultura Moderna — Arábica, Conilon e Robusta</title>
+  <style>
+    :root {
+      --bg-dark: #0a1410;
+      --bg-card: #111f19;
+      --bg-light: #f6f7f5;
+      --green-deep: #1b4332;
+      --green-mid: #2d6a4f;
+      --gold: #d4a373;
+      --amber: #f59e0b;
+      --amber-hover: #d97706;
+      --text-light: #f3f4f6;
+      --text-muted: #9ca3af;
+      --text-dark: #1f2937;
+      --border-dark: rgba(212, 163, 115, 0.22);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, Roboto, Arial, sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    a { text-decoration: none; }
+
+    .container {
+      width: 100%;
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Top Bar */
+    .top-bar {
+      background: #050a08;
+      border-bottom: 1px solid var(--border-dark);
+      text-align: center;
+      padding: 10px 16px;
+      font-size: 0.82rem;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 56px 0 72px;
+      background: radial-gradient(circle at 80% 20%, rgba(45, 106, 79, 0.25), transparent 55%),
+                  linear-gradient(180deg, #0a1410 0%, #0d1b15 100%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 44px;
+      align-items: center;
+    }
+
+    .badge-hero {
+      display: inline-block;
+      background: rgba(212, 163, 115, 0.14);
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      padding: 6px 14px;
+      border-radius: 4px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 3.8vw, 3.05rem);
+      line-height: 1.12;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 span {
+      color: var(--amber);
+    }
+
+    .hero-sub {
+      font-size: 1.12rem;
+      color: #d1d5db;
+      margin-bottom: 24px;
+    }
+
+    .hero-bullets {
+      list-style: none;
+      margin-bottom: 30px;
+    }
+
+    .hero-bullets li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 10px;
+      font-size: 0.98rem;
+      color: #e5e7eb;
+    }
+
+    .check-icon {
+      color: var(--amber);
+      font-weight: 900;
+      font-size: 1.1rem;
+      line-height: 1.4;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+      color: #0a1410;
+      font-weight: 800;
+      font-size: 1.05rem;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      padding: 18px 34px;
+      border-radius: 6px;
+      box-shadow: 0 10px 28px rgba(245, 158, 11, 0.28);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+      text-align: center;
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 34px rgba(245, 158, 11, 0.4);
+    }
+
+    .cta-note {
+      margin-top: 10px;
+      font-size: 0.84rem;
+      color: var(--text-muted);
+    }
+
+    .hero-media {
+      position: relative;
+    }
+
+    .hero-media img {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid var(--border-dark);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.65);
+      display: block;
+    }
+
+    /* Section Base */
+    section {
+      padding: 68px 0;
+    }
+
+    .section-light {
+      background: var(--bg-light);
+      color: var(--text-dark);
+    }
+
+    .section-dark {
+      background: var(--bg-dark);
+      color: var(--text-light);
+    }
+
+    .section-alt {
+      background: #0f1d17;
+      border-top: 1px solid var(--border-dark);
+      border-bottom: 1px solid var(--border-dark);
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto 44px;
+    }
+
+    .section-tag {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.6px;
+      color: var(--gold);
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .section-light .section-tag {
+      color: var(--green-mid);
+    }
+
+    .section-header h2 {
+      font-size: clamp(1.65rem, 2.8vw, 2.3rem);
+      line-height: 1.2;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .section-header p {
+      font-size: 1.02rem;
+      color: var(--text-muted);
+    }
+
+    .section-light .section-header p {
+      color: #4b5563;
+    }
+
+    /* Pain Grid */
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 22px;
+    }
+
+    .pain-card {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-top: 4px solid #b91c1c;
+      border-radius: 8px;
+      padding: 24px 20px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .pain-card h3 {
+      font-size: 1.08rem;
+      color: #991b1b;
+      margin-bottom: 10px;
+    }
+
+    .pain-card p {
+      font-size: 0.94rem;
+      color: #374151;
+    }
+
+    /* Comparison Table */
+    .comp-wrap {
+      overflow-x: auto;
+      border-radius: 10px;
+      border: 1px solid var(--border-dark);
+      background: var(--bg-card);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 640px;
+    }
+
+    th, td {
+      padding: 15px 18px;
+      text-align: left;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.95rem;
+    }
+
+    th {
+      background: var(--green-deep);
+      color: #ffffff;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.82rem;
+      letter-spacing: 0.8px;
+    }
+
+    th.highlight-col {
+      background: var(--amber);
+      color: #0a1410;
+    }
+
+    td.bad { color: #fca5a5; }
+    td.good { color: #a7f3d0; font-weight: 600; }
+
+    /* Chapters Grid */
+    .chapters-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 20px;
+    }
+
+    .chapter-card {
+      background: #ffffff;
+      border: 1px solid #d1d5db;
+      border-left: 5px solid var(--green-deep);
+      border-radius: 8px;
+      padding: 22px;
+    }
+
+    .chapter-num {
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--green-mid);
+      margin-bottom: 4px;
+    }
+
+    .chapter-card h3 {
+      font-size: 1.12rem;
+      color: var(--green-deep);
+      margin-bottom: 10px;
+    }
+
+    .chapter-card p {
+      font-size: 0.92rem;
+      color: #4b5563;
+    }
+
+    /* Bonus / Appendices */
+    .bonus-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 22px;
+    }
+
+    .bonus-card {
+      background: var(--bg-card);
+      border: 1px solid var(--gold);
+      border-radius: 8px;
+      padding: 24px;
+    }
+
+    .bonus-tag {
+      display: inline-block;
+      background: var(--gold);
+      color: #0a1410;
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 3px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .bonus-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+      color: #ffffff;
+    }
+
+    .bonus-card p {
+      font-size: 0.92rem;
+      color: #d1d5db;
+    }
+
+    /* Offer Box */
+    .offer-box {
+      max-width: 720px;
+      margin: 0 auto;
+      background: linear-gradient(165deg, #13251d 0%, #0a1410 100%);
+      border: 2px solid var(--amber);
+      border-radius: 12px;
+      padding: 40px 30px;
+      text-align: center;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+    }
+
+    .offer-old {
+      font-size: 1.05rem;
+      color: #9ca3af;
+      text-decoration: line-through;
+    }
+
+    .offer-price {
+      font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+      font-weight: 900;
+      color: var(--amber);
+      margin: 8px 0 4px;
+    }
+
+    .offer-cash {
+      font-size: 1rem;
+      color: #e5e7eb;
+      margin-bottom: 24px;
+    }
+
+    .guarantee {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      font-size: 0.9rem;
+      color: #d1d5db;
+    }
+
+    /* FAQ */
+    .faq-list {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+
+    .faq-q {
+      width: 100%;
+      background: none;
+      border: none;
+      text-align: left;
+      padding: 18px 20px;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--green-deep);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-a {
+      display: none;
+      padding: 0 20px 18px;
+      font-size: 0.94rem;
+      color: #4b5563;
+    }
+
+    .faq-item.open .faq-a {
+      display: block;
+    }
+
+    footer {
+      background: #050a08;
+      text-align: center;
+      padding: 26px 16px;
+      font-size: 0.85rem;
+      color: #6b7280;
+      border-top: 1px solid var(--border-dark);
+    }
+
+    @media (max-width: 860px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero { padding: 36px 0 48px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    Edição Técnica de Alta Performance • Arábica, Conilon &amp; Robusta • Acesso Imediato via Hotmart
+  </div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="badge-hero">Para Produtores Tecnificados, Agrônomos e Técnicos</span>
+        <h1>Pare de Queimar Adubo e Perder Sacas Usando <span>Manejo Genérico</span> na Sua Lavoura</h1>
+        <p class="hero-sub">
+          Domine a fisiologia, nutrição, irrigação, podas, fitossanidade e pós-colheita com diferenciação cirúrgica entre <strong><em>Coffea arabica</em></strong>, <strong>Conilon</strong> e <strong>Robusta</strong> — e leve sua lavoura ao teto de produtividade e qualidade de bebida.
+        </p>
+        <ul class="hero-bullets">
+          <li><span class="check-icon">✔</span><span><strong>Zero Achismo:</strong> Fórmulas reais de calagem (V%), gessagem (m%) e NPK por saca esperada.</span></li>
+          <li><span class="check-icon">✔</span><span><strong>Diferenciação Real:</strong> Por que tratar Conilon e Robusta como Arábica derruba sua peneira e seca ponteiros.</span></li>
+          <li><span class="check-icon">✔</span><span><strong>Pós-Colheita Lucrativo:</strong> Protocolos de fermentação controlada para cafés especiais e <em>Robustas Finos</em>.</span></li>
+          <li><span class="check-icon">✔</span><span><strong>Checklists de Campo:</strong> 35 pontos críticos prontos para auditar sua fazenda na hora.</span></li>
+        </ul>
+        <a href="https://pay.hotmart.com/SEU-LINK-AQUI" class="cta-btn">Quero Baixar o Manual Técnico Agora</a>
+        <div class="cta-note">🔒 Compra 100% segura na Hotmart • Entrega imediata em PDF • Garantia de 7 dias</div>
+      </div>
+      <div class="hero-media">
+        <img src="assets/capa-anuncio.jpg" alt="Manual Técnico da Cafeicultura Moderna — Arábica, Conilon e Robusta" />
+      </div>
+    </div>
+  </header>
+
+  <!-- PAIN POINTS -->
+  <section class="section-light">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">O Custo Oculto do Empirismo</span>
+        <h2>4 Erros Silenciosos que Custam de 15 a 40 Sacas por Hectare Todo Ano</h2>
+        <p>A maioria dos materiais disponíveis na internet mistura recomendações antigas sem respeitar a genética e a fisiologia de cada espécie.</p>
+      </div>
+      <div class="grid-4">
+        <div class="pain-card">
+          <h3>1. Subestimar K e N no Canephora</h3>
+          <p>Aplicar tabelas de Arábica em Conilon ou Robusta acima de 100 sc/ha gera grãos chochos, baixa peneira e colapso de hastes na granação.</p>
+        </div>
+        <div class="pain-card">
+          <h3>2. Talhão Monoclonal</h3>
+          <p>Ignorar a autoincompatibilidade gametofítica em <em>C. canephora</em> resulta em florada bonita, mas pegamento pífio de chumbinhos.</p>
+        </div>
+        <div class="pain-card">
+          <h3>3. Irrigar Sem Quebra de Dormência</h3>
+          <p>Irrigação contínua no inverno causa múltiplas floradas, elevando o percentual de frutos verdes na colheita e destruindo a nota da bebida.</p>
+        </div>
+        <div class="pain-card">
+          <h3>4. Secagem Acima de 40 °C</h3>
+          <p>Controlar temperatura na fornalha e esquecer a massa de grãos causa branqueamento precoce e perda imediata de ágio na venda.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFFERENTIAL COMPARISON -->
+  <section class="section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">O Grande Diferencial</span>
+        <h2>Por que este Manual é Diferente de Tudo que Você Já Leu</h2>
+        <p>Escrito com rigor de engenharia agronômica e foco direto em rentabilidade por hectare.</p>
+      </div>
+      <div class="comp-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Critério Técnico</th>
+              <th>Guias Genéricos / Conteúdo Gratuito</th>
+              <th class="highlight-col">Manual Técnico da Cafeicultura Moderna</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Espécies e Variedades</strong></td>
+              <td class="bad">Trata Arábica, Conilon e Robusta como se fossem iguais.</td>
+              <td class="good">Compara Arábica, Conilon (ES/BA) e Robusta (RO) capítulo a capítulo.</td>
+            </tr>
+            <tr>
+              <td><strong>Correção de Solo e NPK</strong></td>
+              <td class="bad">Receitas prontas de "X gramas por cova" sem análise.</td>
+              <td class="good">Fórmulas de V%, gessagem em 20–40 cm e extração real por saca.</td>
+            </tr>
+            <tr>
+              <td><strong>Irrigação e Fertirrigação</strong></td>
+              <td class="bad">Dicas vagas de "regar quando estiver seco".</td>
+              <td class="good">Cálculo de ETc, tensiometria (kPa), BHC e compatibilidade de tanques A/B.</td>
+            </tr>
+            <tr>
+              <td><strong>Podas e Condução</strong></td>
+              <td class="bad">Foca apenas em recepa tradicional de Arábica.</td>
+              <td class="good">Esqueletamento/Safra Zero + PPC completa (hastes/ha no Conilon e Robusta).</td>
+            </tr>
+            <tr>
+              <td><strong>Pós-Colheita e Bebida</strong></td>
+              <td class="bad">Apenas secagem básica em terreiro.</td>
+              <td class="good">Via Seca, CD, Fermentação Anaeróbica (pH/°Brix) e protocolos SCA &amp; CQI.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPTERS -->
+  <section class="section-light">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Conteúdo Programático Completo</span>
+        <h2>O Que Você Vai Dominar nos 7 Capítulos</h2>
+        <p>Cada capítulo inclui tabelas comparativas quantitativas e um Checklist Técnico de Campo com os 5 pontos críticos de auditoria.</p>
+      </div>
+      <div class="chapters-grid">
+        <div class="chapter-card">
+          <div class="chapter-num">Capítulo 01</div>
+          <h3>Botânica, Fisiologia e Zoneamento</h3>
+          <p>Autogamia vs. autoincompatibilidade gametofítica, arranjos clonais, morfologia Conilon vs. Robusta, graus-dia e tabela comparativa completa.</p>
+        </div>
+        <div class="chapter-card">
+          <div class="chapter-num">Capítulo 02</div>
+          <h3>Implantação e Melhoramento Genético</h3>
+          <p>Cultivares e clones por ciclo, estaquia ortotrópica, enxertia contra nematoides (Apoatã), cálculos de calagem/gessagem/fosfatagem e densidades.</p>
+        </div>
+        <div class="chapter-card">
+          <div class="chapter-num">Capítulo 03</div>
+          <h3>Nutrição Mineral de Alta Performance</h3>
+          <p>Marcha de absorção fenológica, níveis críticos foliares (macro e micronutrientes), apetite de K/N do Canephora e fertirrigação vs. adubação sólida.</p>
+        </div>
+        <div class="chapter-card">
+          <div class="chapter-num">Capítulo 04</div>
+          <h3>Manejo Hídrico e Irrigação</h3>
+          <p>Estresse hídrico para florada única, gotejamento vs. microaspersão vs. pivô, cálculo de ETc e leitura prática de tensiômetros a 20 e 40 cm.</p>
+        </div>
+        <div class="chapter-card">
+          <div class="chapter-num">Capítulo 05</div>
+          <h3>Podas, Braquiária e Conservação</h3>
+          <p>Esqueletamento, decote, recepa e Safra Zero no Arábica; PPC e desbrota no Conilon/Robusta; manejo de braquiária com roçadora ecológica.</p>
+        </div>
+        <div class="chapter-card">
+          <div class="chapter-num">Capítulo 06</div>
+          <h3>MIP e Manejo de Doenças (MID)</h3>
+          <p>Broca, bicho-mineiro, cochonilha-da-roseta, ácaros, nematoides, ferrugem, cercosporiose, phoma e tabela exata de Níveis de Dano Econômico (NDE).</p>
+        </div>
+        <div class="chapter-card">
+          <div class="chapter-num">Capítulo 07</div>
+          <h3>Colheita, Pós-Colheita e Qualidade</h3>
+          <p>Ponto ideal de colheita, métodos mecanizados, Via Seca/Úmida, fermentação induzida, secagem ≤ 40 °C, COB, peneiras e escalas SCA e CQI Fine Robusta.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BONUSES / APPENDICES -->
+  <section class="section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Inclusos no E-book</span>
+        <h2>3 Apêndices Técnicos Prontos para Aplicação Imediata</h2>
+        <p>Ferramentas práticas de cálculo e protocolo incluídas no material sem custo adicional.</p>
+      </div>
+      <div class="bonus-grid">
+        <div class="bonus-card">
+          <span class="bonus-tag">Apêndice A</span>
+          <h3>Roteiro de Cálculo de Solo e NPK</h3>
+          <p>Exemplo numérico resolvido passo a passo para calagem (V%), gessagem (m%) e recomendação de N, P₂O₅ e K₂O para meta de 120 sc/ha.</p>
+        </div>
+        <div class="bonus-card">
+          <span class="bonus-tag">Apêndice B</span>
+          <h3>Dimensionamento de Fertirrigação</h3>
+          <p>Tabela de parcelamento fenológico (%) e matriz de compatibilidade química (Tanque A vs. Tanque B) para evitar entupimento de gotejadores.</p>
+        </div>
+        <div class="bonus-card">
+          <span class="bonus-tag">Apêndice C</span>
+          <h3>Protocolos de Fermentação Controlada</h3>
+          <p>Parâmetros exatos de °Brix, temperatura, pH de corte e inoculação de leveduras para fermentação anaeróbica e submersa.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFFER / HOTMART CHECKOUT -->
+  <section class="section-dark">
+    <div class="container">
+      <div class="offer-box">
+        <span class="section-tag">Oferta de Lançamento na Hotmart</span>
+        <h2>Garanta Seu Exemplar Agora</h2>
+        <p class="offer-old">De R$ 69,99 por apenas</p>
+        <div class="offer-price">12x de R$ 4,14</div>
+        <div class="offer-cash">ou <strong>R$ 39,99à vista</strong> no Pix ou Cartão</div>
+        <a href="https://pay.hotmart.com/X108475354U" class="cta-btn">Comprar Agora na Hotmart</a>
+        <div class="guarantee">
+          <strong>🛡️ Garantia Incondicional de 7 Dias:</strong> Se você ler o Manual Técnico e sentir que ele não entrega profundidade agronômica real para sua lavoura, basta solicitar o reembolso direto na Hotmart com 1 clique.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section-light">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Dúvidas Frequentes</span>
+        <h2>Perguntas e Respostas</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item open">
+          <button class="faq-q">O material serve para pequenos, médios ou grandes produtores? <span>+</span></button>
+          <div class="faq-a">Serve para qualquer produtor que busque tecnificação e produtividade, além de engenheiros agrônomos, técnicos agrícolas e estudantes de agronomia que precisam de parâmetros quantitativos confiáveis.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Ele aborda tanto Arábica quanto Conilon e Robusta? <span>+</span></button>
+          <div class="faq-a">Sim. Todo o manual é estruturado de forma comparativa, deixando explícitas as diferenças entre <em>Coffea arabica</em>, o grupo Conilon (ES/BA) e o grupo Robusta (RO/Amazônia).</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Como recebo o e-book após a compra na Hotmart? <span>+</span></button>
+          <div class="faq-a">Imediatamente após a confirmação do pagamento, a Hotmart envia o link de acesso ao seu e-mail para download do PDF completo, compatível com celular, tablet e computador.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Manual Técnico da Cafeicultura Moderna © 2026 • Todos os direitos reservados • Pagamento processado com segurança pela Hotmart
+  </footer>
+
+  <script>
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        btn.parentElement.classList.toggle('open');
+      });
+    });
+  </script>
+</body>
+</html>
